@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="container mx-auto max-w-4xl text-center py-10">
+    <div class="grid grid-cols-2 gap-4">
+      <button id="btn1" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Alert Name</button>
+      <button id="btn2" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Alert Number</button>
+      <button id="btn3" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Show Variable Name</button>
+      <button id="btn4" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Show camelCase Example</button>
+      <button id="btn5" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Sum 2 Numbers</button>
+      <button id="btn6" class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Subtract 2 Numbers</button>
+      <button id="btn7" class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded">Multiply Numbers</button>
+      <button id="btn8" class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">Divide Numbers</button>
+      <button id="btn9" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Calculate Some Numbers</button>
+    </div>
+    <div class="mt-8">
+      <h1 class="text-3xl font-bold text-gray-800">Original Statement</h1>
+      <input type="text" id="input" class="mt-2 p-2 w-full rounded border border-gray-300">
+      <button id="btn11" class="mt-2 bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">Clear Input</button>
+    </div>
+    <div class="mt-8">
+      <h1 class="text-3xl font-bold text-gray-800">Output</h1>
+      <div id="output" class="mt-2 p-2 w-full rounded border border-gray-300 bg-white min-h-[4rem]">
+        Output will be shown here
+      </div>
+      <button id="btn10" class="mt-2 bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded">Clear Output</button>
+    </div>
+  </div></body>
+<script>
+  let input=document.querySelector('#input')
+  let output=document.querySelector('#output')
+    let btn1=document.querySelector('#btn1')
+    let btn2=document.querySelector('#btn2')
+    let btn3=document.querySelector('#btn3')
+    let btn4=document.querySelector('#btn4')
+    let btn5=document.querySelector('#btn5')
+    let btn6=document.querySelector('#btn6')
+    let btn7=document.querySelector('#btn7')
+    let btn8=document.querySelector('#btn8')
+    let btn9=document.querySelector('#btn9')
+    
+btn1.addEventListener("click",()=>{
+  let name =prompt('what is your name')
+  output.textContent=`your name is =${name}`;
+})
+
+btn2.addEventListener("click",()=>{
+  let num =prompt('Enter number ')
+  output.textContent=`your number is ${num}`;
+})
+
+btn3.addEventListener("click",()=>{
+  
+  output.textContent=`Start with a letter, underscore (_), or dollar sign ($):\n
+Valid: firstName, user_id, $total\n
+Invalid: 1name, %age (numbers or special characters at the beginning)
+\n
+Case-sensitive:
+age and Age are considered different variables.
+\n
+Avoid reserved keywords:
+\n
+if, for, let, const, and others are off-limits for variable names.
+Conventions (Recommendations):
+\n
+CamelCase (preferred):
+Words are joined with a capital letter at the start of each subsequent word, except for the first word.
+\n
+Example: customerName, numberOfItems
+\n
+PascalCase (less common):
+\n
+Similar to camelCase, but the first word is also capitalized.
+\n
+Example: CustomerName, NumberOfItems
+\n
+Snake_case:
+\n
+Words are separated by underscores.
+\n
+Example: first_name, user_id
+\n
+Descriptive names:
+Choose names that clearly reflect the variable's purpose. This enhances code readability.
+Example: totalPrice is better than x.
+Additional Tips:
+\n
+Consistency:
+Maintain a consistent naming style throughout your code for better maintainability.
+Avoid abbreviations (unless widely understood):
+Use clear and descriptive names for better comprehension.
+Example: fullName is better than fn.
+Consider type prefixes (optional):
+Some developers use prefixes like str_, num_, or bool_ to indicate the variable's data type (string, number, boolean). However, this practice is not universally adopted.
+`;
+})
+btn4.addEventListener("click",()=>{
+  output.textContent=`firstName (variable to store a person's first name)\n
+numberOfItemsInCart (variable to store the number of items in a shopping cart) \n
+isLoggedIn (variable to indicate whether a user is logged in (true) or not (false))\n
+calculateTotalPrice (function name to calculate the total price)\n
+isPaymentSuccessful (variable to indicate whether a payment was successful)`
+})
+btn5.addEventListener("click",()=>{
+ 
+let num1=2;
+let num2=4;
+let sum=num1+num2 ;
+output.textContent=`first number=${num1}\n 
+second number=${num2}\n
+sum = ${sum}
+`
+})
+btn6.addEventListener("click",()=>{
+ 
+ let num1=2;
+ let num2=4;
+ let answer=num1-num2 ;
+ output.textContent=`first number=${num1}\n 
+ second number=${num2}\n
+ answer = ${answer}
+ `
+ })
+ btn7.addEventListener("click",()=>{
+ 
+ let num1=2;
+ let num2=4;
+ let mul=num1*num2 ;
+ output.textContent=`first number=${num1}\n 
+ second number=${num2}\n
+ multiply= ${mul}
+ `
+ })
+ btn8.addEventListener("click",()=>{
+ 
+ let num1=2;
+ let num2=4;
+ let div=num1/num2 ;
+ output.textContent=`first number=${num1}\n 
+ second number=${num2}\n
+ division= ${div}
+ `
+ })
+ btn9.addEventListener("click",()=>{
+ 
+ let num1=2;
+ let num2=4;
+ let sum=num1+num2 ;
+ let minus=num1-num2 ;
+ let mul=num1*num2 ;
+ let div=num1/num2 ;
+
+ output.textContent=`first number=${num1} \n
+ \n second number=${num2} 
+ \n sum = ${sum} \n
+ \n minus = ${minus}\n
+ \n multiply = ${mul}\n
+ \ndivide = ${div}
+
+ `
+ })
+ btn10.addEventListener("click",()=>{
+output.innerText='' 
+
+ })
+ btn11.addEventListener("click",()=>{
+input.innerText='' 
+
+ })
+</script>
+</html>
